@@ -1,7 +1,7 @@
 const { createStore } = require("redux");
 
 const BUY_CAKE = "BUY_CAKE";
-
+const BUY_ICECREAM = "BUY_ICECREAM";
 // Action creator - function that returns an action
 function buyCake() {
   return {
@@ -10,9 +10,17 @@ function buyCake() {
   };
 }
 
+function buyIceCream() {
+  return {
+    type: BUY_ICECREAM,
+    info: "Second Redux action",
+  };
+}
+
 // Initial state
 const initialState = {
   numOfCakes: 10,
+  numOfIcecreams: 20,
 };
 
 // Reducer
@@ -22,6 +30,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         numOfCakes: state.numOfCakes - 1,
+      };
+    case BUY_ICECREAM:
+      return {
+        ...state,
+        numOfIcecreams: state.numOfIcecreams - 1,
       };
     default:
       return state;
@@ -43,6 +56,8 @@ const unsubscribe = store.subscribe(() =>
 store.dispatch(buyCake());
 store.dispatch(buyCake());
 store.dispatch(buyCake());
+store.dispatch(buyIceCream());
+store.dispatch(buyIceCream());
 
 // Unsubscribe from store
 unsubscribe();
