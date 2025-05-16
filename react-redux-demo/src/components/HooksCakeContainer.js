@@ -4,7 +4,7 @@ import { buyCake } from "../redux";
 
 function HooksCakeContainer() {
   // access the state in the redux store and stored it in the functiional component variable "numOfCakes"
-  const numOfCakes = useSelector((state) => state.numOfCakes);
+  const numOfCakes = useSelector((state) => state.cake.numOfCakes);
   const dispatch = useDispatch();
   return (
     <div>
