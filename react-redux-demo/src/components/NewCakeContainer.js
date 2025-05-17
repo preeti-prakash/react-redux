@@ -12,7 +12,7 @@ function NewCakeContainer(props) {
         value={number}
         onChange={(e) => setNumber(e.target.value)}
       />
-      "<button onClick={() => props.buyCake(number)}>Buy {number} Cakes</button>
+      <button onClick={() => props.buyCake(number)}>Buy {number} Cakes</button>
     </div>
   );
 }
